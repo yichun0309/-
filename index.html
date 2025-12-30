@@ -1,11 +1,144 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <title>新北市氣候變遷相關網站</title>
+  <meta charset="UTF-8" />
+  <title>相關網站連結</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", sans-serif;
+      background: #f6e7dc;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+
+    .title {
+      display: inline-block;
+      background: #2f6f5e;
+      color: white;
+      padding: 10px 28px;
+      border-radius: 30px;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .card {
+      background: #5f8778;
+      color: white;
+      padding: 24px;
+      position: relative;
+      min-height: 180px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 22px;
+      border-bottom: 1px dashed rgba(255,255,255,0.6);
+      padding-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+
+    .go {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background: #f7b84b;
+      color: #333;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .go:hover {
+      background: #ffcc66;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>新北市氣候變遷相關網站連結</h1>
-  <p>這是 GitHub Pages 測試頁</p>
+
+<div class="container">
+  <div class="title">相關網站連結</div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>臺灣氣候變遷推估資訊與調適知識平台</h3>
+      <p>
+        提供臺灣氣候變遷推估資料與調適知識服務，整合氣候情境分析、衝擊評估與調適策略等資訊，
+        作為政策規劃、學術研究與公共溝通的重要支援工具。
+      </p>
+      <a class="go" href="https://tccip.ncdr.nat.gov.tw/" target="_blank">Go</a>
+    </div>
+
+    <div class="card">
+      <h3>氣候變遷災害風險調適平臺</h3>
+      <p>
+        由國家災害防救科技中心建立的互動式線上工具，整合氣候變遷推估與災害風險分析，
+        提供淹水、坡地等災害風險資訊。
+      </p>
+      <a class="go" href="https://dra.ncdr.nat.gov.tw/" target="_blank">Go</a>
+    </div>
+
+    <div class="card">
+      <h3>減災動資料</h3>
+      <p>
+        整合臺灣防災與減災數據，涵蓋災害調查統計、社會脆弱性評估、
+        撤離與收容人口等資料來源。
+      </p>
+      <a class="go" href="https://drrstat.ncdr.nat.gov.tw/" target="_blank">Go</a>
+    </div>
+
+    <div class="card">
+      <h3>環境部氣候變遷署全球資訊網</h3>
+      <p>
+        環境部氣候變遷署官方網站，整合氣候變遷因應政策、溫室氣體減量、
+        氣候調適策略與相關法規資訊。
+      </p>
+      <a class="go" href="https://www.cca.gov.tw/" target="_blank">Go</a>
+    </div>
+
+    <div class="card">
+      <h3>新北市政府－淨零新北</h3>
+      <p>
+        提供新北市低碳生活與淨零行動相關資訊，涵蓋運輸、能源、
+        工業等部門的減碳路徑與政策成果。
+      </p>
+      <a class="go" href="https://lowcarbon.epd.ntpc.gov.tw/ntpcepd/" target="_blank">Go</a>
+    </div>
+
+    <div class="card">
+      <h3>新北市低碳生活網</h3>
+      <p>
+        新北市政府環保局建置的低碳與永續發展平台，
+        提供低碳政策資訊、減碳行動計畫與生活節能資源。
+      </p>
+      <a class="go" href="https://lowcarbon.epd.ntpc.gov.tw/lowcarbon/front/" target="_blank">Go</a>
+    </div>
+
+  </div>
+</div>
+
 </body>
 </html>
