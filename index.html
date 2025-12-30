@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>相關網站連結</title>
+
   <style>
     body {
       margin: 0;
@@ -13,56 +14,71 @@
     .container {
       max-width: 1200px;
       margin: 40px auto;
+      padding: 0 16px;
     }
 
     .title {
       display: inline-block;
       background: #2f6f5e;
       color: white;
-      padding: 10px 28px;
-      border-radius: 30px;
-      font-size: 28px;
+      padding: 14px 34px;
+      border-radius: 40px;
+      font-size: 32px; /* 標題變大 */
       font-weight: bold;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 28px;
     }
 
     .card {
       background: #5f8778;
       color: white;
-      padding: 24px;
+      padding: 28px 120px 28px 28px; /* 右側留 logo 空間 */
       position: relative;
-      min-height: 180px;
+      min-height: 200px;
     }
 
     .card h3 {
-      margin-top: 0;
-      font-size: 22px;
+      margin: 0 0 12px 0;
+      font-size: 24px; /* 小標加大 */
       border-bottom: 1px dashed rgba(255,255,255,0.6);
-      padding-bottom: 8px;
+      padding-bottom: 10px;
     }
 
     .card p {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 40px;
+      font-size: 18px; /* 內文字加大 */
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .logo {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width: 90px;
+      max-height: 90px;
+      object-fit: contain;
+      background: white;
+      border-radius: 8px;
+      padding: 6px;
     }
 
     .go {
       position: absolute;
-      bottom: 16px;
-      right: 16px;
+      bottom: 18px;
+      right: 18px;
       background: #f7b84b;
       color: #333;
-      padding: 6px 14px;
+      padding: 8px 18px;
       border-radius: 20px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 15px;
     }
 
     .go:hover {
@@ -73,9 +89,21 @@
       .grid {
         grid-template-columns: 1fr;
       }
+
+      .card {
+        padding-right: 28px;
+      }
+
+      .logo {
+        position: static;
+        transform: none;
+        margin-top: 16px;
+        display: block;
+      }
     }
   </style>
 </head>
+
 <body>
 
 <div class="container">
@@ -85,55 +113,43 @@
 
     <div class="card">
       <h3>臺灣氣候變遷推估資訊與調適知識平台</h3>
-      <p>
-        提供臺灣氣候變遷推估資料與調適知識服務，整合氣候情境分析、衝擊評估與調適策略等資訊，
-        作為政策規劃、學術研究與公共溝通的重要支援工具。
-      </p>
+      <p>提供臺灣氣候變遷推估資料與調適知識服務，整合氣候情境分析、衝擊評估與調適策略等資訊，作為政策規劃、學術研究與公共溝通之重要支援工具</p>
+      <img class="logo" src="images/tccip.png" alt="TCCIP">
       <a class="go" href="https://tccip.ncdr.nat.gov.tw/" target="_blank">Go</a>
     </div>
 
     <div class="card">
-      <h3>氣候變遷災害風險調適平臺</h3>
-      <p>
-        由國家災害防救科技中心建立的互動式線上工具，整合氣候變遷推估與災害風險分析，
-        提供淹水、坡地等災害風險資訊。
-      </p>
+      <h3>氣候變遷災害風險調適平台</h3>
+      <p>由國家災害防救科技中心建立的互動式線上工具，整合氣候變遷推估與災害風險分析，提供淹水、坡地等災害風險圖資、風險評估與下載功能，支援政策制定、研究分析與民眾理解</p>
+      <img class="logo" src="images/dra.png" alt="DRA">
       <a class="go" href="https://dra.ncdr.nat.gov.tw/" target="_blank">Go</a>
     </div>
 
     <div class="card">
       <h3>減災動資料</h3>
-      <p>
-        整合臺灣防災與減災數據，涵蓋災害調查統計、社會脆弱性評估、
-        撤離與收容人口等資料來源。
-      </p>
+      <p>本平台整合臺灣防災與減災數據，涵蓋災害調查統計、社會脆弱性評估、撤離/收容人口與物資推估等資訊，作為防救決策、風險評估與研究應用的資料來源</p>
+      <img class="logo" src="images/drr.png" alt="DRR">
       <a class="go" href="https://drrstat.ncdr.nat.gov.tw/" target="_blank">Go</a>
     </div>
 
     <div class="card">
-      <h3>環境部氣候變遷署全球資訊網</h3>
-      <p>
-        環境部氣候變遷署官方網站，整合氣候變遷因應政策、溫室氣體減量、
-        氣候調適策略與相關法規資訊。
-      </p>
+      <h3>環境部氣候變遷署</h3>
+      <p>本平台為 環境部氣候變遷署 官方資訊網站，整合國家氣候變遷因應政策、溫室氣體減量與管理、碳費制度、氣候調適策略與相關法規資料，提供政府、學界及民眾完整的氣候變遷資訊服務</p>
+      <img class="logo" src="images/cca.png" alt="CCA">
       <a class="go" href="https://www.cca.gov.tw/" target="_blank">Go</a>
     </div>
 
     <div class="card">
       <h3>新北市政府－淨零新北</h3>
-      <p>
-        提供新北市低碳生活與淨零行動相關資訊，涵蓋運輸、能源、
-        工業等部門的減碳路徑與政策成果。
-      </p>
+      <p>本平台提供新北市低碳生活與淨零行動相關資訊，涵蓋住商、運輸、能源、工業等部門的減碳路徑、執行方案、政策成果、淨零加速器、綠能與節能資源，支援地方永續治理與公民參與</p>
+      <img class="logo" src="images/netzero.png" alt="Net Zero">
       <a class="go" href="https://lowcarbon.epd.ntpc.gov.tw/ntpcepd/" target="_blank">Go</a>
     </div>
 
     <div class="card">
       <h3>新北市低碳生活網</h3>
-      <p>
-        新北市政府環保局建置的低碳與永續發展平台，
-        提供低碳政策資訊、減碳行動計畫與生活節能資源。
-      </p>
+      <p>新北市低碳城市專區為新北市政府環保局建立的低碳與永續發展平台，整合低碳政策資訊、減碳行動計畫、生活節能指南與綠能推廣資源，提供政府、企業及民眾查詢與參考</p>
+      <img class="logo" src="images/lowcarbon.png" alt="Low Carbon">
       <a class="go" href="https://lowcarbon.epd.ntpc.gov.tw/lowcarbon/front/" target="_blank">Go</a>
     </div>
 
