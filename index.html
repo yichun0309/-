@@ -10,7 +10,6 @@
       margin:0;
       font-family:"Noto Sans TC", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
       background:#f6e7dc;
-      color:#fff;
     }
 
     .container{
@@ -19,220 +18,225 @@
       padding:0 16px;
     }
 
-    /* 標題膠囊 */
+    /* 標題 */
     .title{
       display:inline-block;
       background:#2f6f5e;
       color:#fff;
-      padding:12px 32px;
+      padding:12px 36px;
       border-radius:999px;
-      font-size:34px;          /* ✅ 標題變大 */
+      font-size:34px;
       font-weight:800;
       letter-spacing:1px;
-      margin:0 0 28px 0;
+      margin-bottom:28px;
     }
 
-    /* 2 欄卡片 */
+    /* 卡片格線 */
     .grid{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:24px;
+      gap:26px;
     }
 
-    /* 卡片本體 */
+    /* 卡片 */
     .card{
       background:#5f8778;
-      padding:22px 22px 62px 22px;
-      min-height:200px;
+      color:#fff;
       position:relative;
-      border-radius:0;         /* 若想圓角可改 12px */
-      overflow:hidden;
+      min-height:210px;
     }
 
-    /* 卡片內容：左文字 + 右 logo */
+    /* 左文字 + 右白條 */
     .card-inner{
       display:grid;
-      grid-template-columns: 1fr 180px;  /* 右側 logo 欄寬 */
-      gap:18px;
-      align-items:start;
+      grid-template-columns: 1fr 120px; /* 白色直條寬度 */
+      height:100%;
     }
 
-    .card h3{
-      margin:0 0 10px 0;
-      font-size:24px;          /* ✅ 卡片標題變大 */
+    /* 左側內容 */
+    .content{
+      padding:22px 22px 64px 22px;
+    }
+
+    .content h3{
+      margin:0 0 12px 0;
+      font-size:26px;
       font-weight:800;
-      line-height:1.25;
-      padding-bottom:10px;
       border-bottom:2px dashed rgba(255,255,255,0.55);
+      padding-bottom:10px;
     }
 
-    .card p{
+    .content p{
       margin:0;
-      font-size:18px;          /* ✅ 內文變大 */
+      font-size:18px;
       line-height:1.75;
-      opacity:0.95;
     }
 
-    /* 右側 logo */
-    .logo-wrap{
+    /* 右側白色直條 */
+    .side{
+      background:#ffffff;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:rgba(255,255,255,0.12);
-      height:100%;
-      padding:10px;
     }
 
-    .logo{
-      max-width:160px;
+    .side img{
+      max-width:90px;
       max-height:140px;
       width:auto;
       height:auto;
       object-fit:contain;
-      display:block;
     }
 
     /* Go 按鈕 */
     .go{
       position:absolute;
-      right:18px;
+      right:138px; /* 貼近白色直條 */
       bottom:16px;
       background:#f7b84b;
       color:#333;
-      text-decoration:none;
       font-weight:800;
-      font-size:16px;
-      padding:8px 16px;
+      text-decoration:none;
+      padding:8px 18px;
       border-radius:999px;
-      box-shadow:0 1px 0 rgba(0,0,0,0.15);
+      font-size:16px;
     }
     .go:hover{ background:#ffcc66; }
 
-    /* 手機版：改成單欄，logo 移到下方 */
+    /* 手機版 */
     @media (max-width: 900px){
       .grid{ grid-template-columns:1fr; }
-      .card-inner{ grid-template-columns:1fr; }
-      .logo-wrap{
-        margin-top:14px;
-        height:auto;
+
+      .card-inner{
+        grid-template-columns:1fr;
       }
-      .logo{
-        max-width:220px;
-        max-height:120px;
+
+      .side{
+        border-top:1px solid #ddd;
+        padding:14px 0;
+      }
+
+      .side img{
+        max-width:200px;
+        max-height:90px;
+      }
+
+      .go{
+        right:16px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="title">相關網站連結</div>
+<div class="container">
+  <div class="title">相關網站連結</div>
 
-    <div class="grid">
+  <div class="grid">
 
-      <!-- 1 -->
-      <div class="card">
-        <div class="card-inner">
-          <div class="text">
-            <h3>臺灣氣候變遷推估資訊與調適知識平台</h3>
-            <p>
-              提供臺灣氣候變遷推估資料與調適知識服務，整合氣候情境分析、衝擊評估與調適策略等資訊，
-              作為政策規劃、學術研究與公共溝通的重要支援工具。
-            </p>
-          </div>
-          <div class="logo-wrap">
-            <img class="logo" src="images/tccip.png" alt="TCCIP" />
-          </div>
+    <!-- 1 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="content">
+          <h3>臺灣氣候變遷推估資訊與調適知識平台</h3>
+          <p>
+            提供臺灣氣候變遷推估資料與調適知識服務，整合氣候情境分析、衝擊評估與調適策略等資訊，
+            作為政策規劃、學術研究與公共溝通的重要支援工具。
+          </p>
         </div>
-        <a class="go" href="https://tccip.ncdr.nat.gov.tw/au_01.aspx" target="_blank" rel="noopener">Go</a>
-      </div>
-
-      <!-- 2 -->
-      <div class="card">
-        <div class="card-inner">
-          <div class="text">
-            <h3>氣候變遷災害風險調適平臺</h3>
-            <p>
-              由國家災害防救科技中心建立的互動式線上工具，整合氣候變遷推估與災害風險分析，
-              提供淹水、坡地等災害風險資訊。
-            </p>
-          </div>
-          <div class="logo-wrap">
-            <img class="logo" src="images/dra.png" alt="DRA" />
-          </div>
+        <div class="side">
+          <img src="images/tccip.png" alt="TCCIP">
         </div>
-        <a class="go" href="https://dra.ncdr.nat.gov.tw/" target="_blank" rel="noopener">Go</a>
       </div>
-
-      <!-- 3 -->
-      <div class="card">
-        <div class="card-inner">
-          <div class="text">
-            <h3>減災動資料</h3>
-            <p>
-              整合臺灣防災與減災數據，涵蓋災害調查統計、社會脆弱性評估、
-              撤離與收容人口等資料來源。
-            </p>
-          </div>
-          <div class="logo-wrap">
-            <img class="logo" src="images/drr.png" alt="DRRSTAT" />
-          </div>
-        </div>
-        <a class="go" href="https://drrstat.ncdr.nat.gov.tw/" target="_blank" rel="noopener">Go</a>
-      </div>
-
-      <!-- 4 -->
-      <div class="card">
-        <div class="card-inner">
-          <div class="text">
-            <h3>環境部氣候變遷署全球資訊網</h3>
-            <p>
-              環境部氣候變遷署官方網站，整合氣候變遷因應政策、溫室氣體減量、
-              氣候調適策略與相關法規資訊。
-            </p>
-          </div>
-          <div class="logo-wrap">
-            <img class="logo" src="images/cca.png" alt="CCA" />
-          </div>
-        </div>
-        <a class="go" href="https://www.cca.gov.tw/" target="_blank" rel="noopener">Go</a>
-      </div>
-
-      <!-- 5 -->
-      <div class="card">
-        <div class="card-inner">
-          <div class="text">
-            <h3>新北市政府－淨零新北</h3>
-            <p>
-              提供新北市低碳生活與淨零行動相關資訊，涵蓋運輸、能源、
-              工業等部門的減碳路徑與政策成果。
-            </p>
-          </div>
-          <div class="logo-wrap">
-            <img class="logo" src="images/netzero.png" alt="淨零新北" />
-          </div>
-        </div>
-        <a class="go" href="https://lowcarbon.epd.ntpc.gov.tw/ntpcepd/" target="_blank" rel="noopener">Go</a>
-      </div>
-
-      <!-- 6 -->
-      <div class="card">
-        <div class="card-inner">
-          <div class="text">
-            <h3>新北市低碳生活網</h3>
-            <p>
-              新北市政府環保局建置的低碳與永續發展平台，
-              提供低碳政策資訊、減碳行動計畫與生活節能資源。
-            </p>
-          </div>
-          <div class="logo-wrap">
-            <img class="logo" src="images/lowcarbon.png" alt="低碳生活網" />
-          </div>
-        </div>
-        <a class="go" href="https://lowcarbon.epd.ntpc.gov.tw/lowcarbon/front/" target="_blank" rel="noopener">Go</a>
-      </div>
-
+      <a class="go" href="https://tccip.ncdr.nat.gov.tw/au_01.aspx" target="_blank">Go</a>
     </div>
+
+    <!-- 2 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="content">
+          <h3>氣候變遷災害風險調適平臺</h3>
+          <p>
+            由國家災害防救科技中心建立的互動式線上工具，
+            整合氣候變遷推估與災害風險分析，提供多類災害風險資訊。
+          </p>
+        </div>
+        <div class="side">
+          <img src="images/dra.png" alt="DRA">
+        </div>
+      </div>
+      <a class="go" href="https://dra.ncdr.nat.gov.tw/" target="_blank">Go</a>
+    </div>
+
+    <!-- 3 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="content">
+          <h3>減災動資料</h3>
+          <p>
+            整合臺灣防災與減災數據，涵蓋災害調查統計、
+            社會脆弱性評估、撤離與收容人口等資料。
+          </p>
+        </div>
+        <div class="side">
+          <img src="images/drr.png" alt="DRR">
+        </div>
+      </div>
+      <a class="go" href="https://drrstat.ncdr.nat.gov.tw/" target="_blank">Go</a>
+    </div>
+
+    <!-- 4 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="content">
+          <h3>環境部氣候變遷署全球資訊網</h3>
+          <p>
+            環境部氣候變遷署官方網站，
+            提供氣候政策、溫室氣體減量與氣候調適相關資訊。
+          </p>
+        </div>
+        <div class="side">
+          <img src="images/cca.png" alt="CCA">
+        </div>
+      </div>
+      <a class="go" href="https://www.cca.gov.tw/" target="_blank">Go</a>
+    </div>
+
+    <!-- 5 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="content">
+          <h3>新北市政府－淨零新北</h3>
+          <p>
+            提供新北市低碳生活與淨零行動相關資訊，
+            涵蓋運輸、能源、工業等部門的減碳路徑。
+          </p>
+        </div>
+        <div class="side">
+          <img src="images/netzero.png" alt="淨零新北">
+        </div>
+      </div>
+      <a class="go" href="https://lowcarbon.epd.ntpc.gov.tw/ntpcepd/" target="_blank">Go</a>
+    </div>
+
+    <!-- 6 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="content">
+          <h3>新北市低碳生活網</h3>
+          <p>
+            新北市政府環保局建置的低碳與永續發展平台，
+            提供低碳政策、減碳行動與生活節能資源。
+          </p>
+        </div>
+        <div class="side">
+          <img src="images/lowcarbon.png" alt="低碳生活網">
+        </div>
+      </div>
+      <a class="go" href="https://lowcarbon.epd.ntpc.gov.tw/lowcarbon/front/" target="_blank">Go</a>
+    </div>
+
   </div>
+</div>
 </body>
 </html>
