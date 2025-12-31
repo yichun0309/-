@@ -43,13 +43,13 @@
       background:#5f8778;
       color:#fff;
       position:relative;
-      height:260px; /* ✅ 固定高度，確保右側白條有明確高度 */
+      min-height:210px;
     }
 
     /* 左文字 + 右白條 */
     .card-inner{
       display:grid;
-      grid-template-columns: 1fr 130px; /* 白色直條寬度 */
+      grid-template-columns: 1fr 120px; /* 白色直條寬度 */
       height:100%;
     }
 
@@ -72,43 +72,39 @@
       line-height:1.75;
     }
 
-    /* 右側白色直條：安全視窗 */
+    /* 右側白色直條 */
     .side{
       background:#ffffff;
       display:flex;
       align-items:center;
       justify-content:center;
-      overflow:hidden;      /* ✅ 超出就裁，保護版面 */
-      height:100%;
-      padding:8px 0;        /* ✅ 安全留白，避免貼邊 */
+      overflow:hidden; /* ✅ 關鍵：讓 logo 可以「滿版」超出就裁切 */
     }
 
-    /* logo 容器 */
+    /* logo 容器：滿版 */
     .logo-box{
       width:100%;
       height:100%;
-      max-width:100%;
-      max-height:100%;
       display:flex;
       align-items:center;
       justify-content:center;
     }
 
-    /* ✅ 每張盡量不裁切但都最大化：contain + 有上限 scale */
+    /* ✅ 圖片：滿版策略（cover）+ 旋轉 */
     .logo-box img{
       width:100%;
       height:100%;
-      object-fit:contain;                 /* ✅ 盡量不裁切 */
-      display:block;
+      object-fit:cover; /* ✅ 關鍵：直接滿版（允許裁切） */
 
-      transform: rotate(-90deg) scale(1.22);  /* ✅ 最大化但不爆版 */
-      transform-origin:center center;
+      transform: rotate(-90deg);
+      transform-origin: center center;
+      display:block;
     }
 
     /* Go 按鈕 */
     .go{
       position:absolute;
-      right:150px; /* 貼近白色直條 */
+      right:138px; /* 貼近白色直條 */
       bottom:16px;
       background:#f7b84b;
       color:#333;
@@ -124,20 +120,12 @@
     @media (max-width: 900px){
       .grid{ grid-template-columns:1fr; }
 
-      .card{
-        height:auto;
-        min-height:240px;
-      }
-
       .card-inner{
         grid-template-columns:1fr;
-        height:auto;
       }
 
       .side{
-        height:180px;     /* ✅ 手機白條固定高度，logo 才能最大化 */
         border-top:1px solid #ddd;
-        padding:10px 0;   /* 手機稍微多留白更好看 */
       }
 
       .go{
