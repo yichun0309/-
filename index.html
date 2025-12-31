@@ -78,14 +78,20 @@
       display:flex;
       align-items:center;
       justify-content:center;
+      overflow:hidden; /* 避免旋轉後超出 */
     }
 
+    /* ✅ 圖片逆時針轉 90 度（頭朝左） */
     .side img{
       max-width:90px;
       max-height:140px;
       width:auto;
       height:auto;
       object-fit:contain;
+
+      transform: rotate(-90deg);
+      transform-origin: center center;
+      display:block;
     }
 
     /* Go 按鈕 */
@@ -116,9 +122,12 @@
         padding:14px 0;
       }
 
+      /* 手機版也同樣逆時針轉 90 度 */
       .side img{
         max-width:200px;
         max-height:90px;
+        transform: rotate(-90deg);
+        transform-origin: center center;
       }
 
       .go{
