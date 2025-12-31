@@ -49,7 +49,7 @@
     /* 左文字 + 右白條 */
     .card-inner{
       display:grid;
-      grid-template-columns: 1fr 120px; /* 白色直條寬度 */
+      grid-template-columns: 1fr 120px;
       height:100%;
     }
 
@@ -78,17 +78,15 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      overflow:hidden; /* 避免旋轉後超出 */
+      overflow:hidden;
+      padding:8px 0;
     }
 
-    /* ✅ 圖片逆時針轉 90 度（頭朝左） */
+    /* 圖片放大，填滿白色直條 */
     .side img{
-      max-width:90px;
-      max-height:140px;
+      height:85%;
       width:auto;
-      height:auto;
       object-fit:contain;
-
       transform: rotate(-90deg);
       transform-origin: center center;
       display:block;
@@ -97,7 +95,7 @@
     /* Go 按鈕 */
     .go{
       position:absolute;
-      right:138px; /* 貼近白色直條 */
+      right:138px;
       bottom:16px;
       background:#f7b84b;
       color:#333;
@@ -122,10 +120,10 @@
         padding:14px 0;
       }
 
-      /* 手機版也同樣逆時針轉 90 度 */
       .side img{
-        max-width:200px;
-        max-height:90px;
+        height:70%;
+        width:auto;
+        object-fit:contain;
         transform: rotate(-90deg);
         transform-origin: center center;
       }
