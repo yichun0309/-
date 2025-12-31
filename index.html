@@ -38,18 +38,20 @@
       gap:26px;
     }
 
-    /* 卡片 */
+    /* =========================
+       卡片（給明確高度）
+    ========================= */
     .card{
       background:#5f8778;
       color:#fff;
       position:relative;
-      min-height:210px;
+      height:260px; /* ✅ 關鍵：固定高度，logo 才能真正放大 */
     }
 
     /* 左文字 + 右白條 */
     .card-inner{
       display:grid;
-      grid-template-columns: 1fr 120px; /* 白色直條寬度 */
+      grid-template-columns: 1fr 130px; /* 白色直條寬一點，視覺更穩 */
       height:100%;
     }
 
@@ -72,16 +74,19 @@
       line-height:1.75;
     }
 
-    /* 右側白色直條 */
+    /* =========================
+       右側白色直條（滿高）
+    ========================= */
     .side{
       background:#ffffff;
       display:flex;
       align-items:center;
       justify-content:center;
-      overflow:hidden; /* ✅ 關鍵：讓 logo 可以「滿版」超出就裁切 */
+      overflow:hidden;     /* ✅ 超出直接裁 */
+      height:100%;
     }
 
-    /* logo 容器：滿版 */
+    /* logo 容器：吃滿白條 */
     .logo-box{
       width:100%;
       height:100%;
@@ -90,21 +95,22 @@
       justify-content:center;
     }
 
-    /* ✅ 圖片：滿版策略（cover）+ 旋轉 */
+    /* =========================
+       logo：滿版策略
+    ========================= */
     .logo-box img{
       width:100%;
       height:100%;
-      object-fit:cover; /* ✅ 關鍵：直接滿版（允許裁切） */
-
-      transform: rotate(-90deg);
-      transform-origin: center center;
+      object-fit:cover;                 /* ✅ 一定滿版 */
+      transform: rotate(-90deg);        /* 直向 logo */
+      transform-origin:center center;
       display:block;
     }
 
     /* Go 按鈕 */
     .go{
       position:absolute;
-      right:138px; /* 貼近白色直條 */
+      right:150px;
       bottom:16px;
       background:#f7b84b;
       color:#333;
@@ -116,15 +122,24 @@
     }
     .go:hover{ background:#ffcc66; }
 
-    /* 手機版 */
+    /* =========================
+       手機版
+    ========================= */
     @media (max-width: 900px){
       .grid{ grid-template-columns:1fr; }
 
+      .card{
+        height:auto;
+        min-height:240px;
+      }
+
       .card-inner{
         grid-template-columns:1fr;
+        height:auto;
       }
 
       .side{
+        height:180px;       /* ✅ 手機白條固定高度，logo 才會大 */
         border-top:1px solid #ddd;
       }
 
