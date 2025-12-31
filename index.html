@@ -38,20 +38,18 @@
       gap:26px;
     }
 
-    /* =========================
-       卡片（給明確高度）
-    ========================= */
+    /* 卡片 */
     .card{
       background:#5f8778;
       color:#fff;
       position:relative;
-      height:260px; /* ✅ 關鍵：固定高度，logo 才能真正放大 */
+      height:260px; /* ✅ 固定高度，確保右側白條有明確高度 */
     }
 
     /* 左文字 + 右白條 */
     .card-inner{
       display:grid;
-      grid-template-columns: 1fr 130px; /* 白色直條寬一點，視覺更穩 */
+      grid-template-columns: 1fr 130px; /* 白色直條寬度 */
       height:100%;
     }
 
@@ -74,43 +72,43 @@
       line-height:1.75;
     }
 
-    /* =========================
-       右側白色直條（滿高）
-    ========================= */
+    /* 右側白色直條：安全視窗 */
     .side{
       background:#ffffff;
       display:flex;
       align-items:center;
       justify-content:center;
-      overflow:hidden;     /* ✅ 超出直接裁 */
+      overflow:hidden;      /* ✅ 超出就裁，保護版面 */
       height:100%;
+      padding:8px 0;        /* ✅ 安全留白，避免貼邊 */
     }
 
-    /* logo 容器：吃滿白條 */
+    /* logo 容器 */
     .logo-box{
       width:100%;
       height:100%;
+      max-width:100%;
+      max-height:100%;
       display:flex;
       align-items:center;
       justify-content:center;
     }
 
-    /* =========================
-       logo：滿版策略
-    ========================= */
+    /* ✅ 每張盡量不裁切但都最大化：contain + 有上限 scale */
     .logo-box img{
       width:100%;
       height:100%;
-      object-fit:cover;                 /* ✅ 一定滿版 */
-      transform: rotate(-90deg);        /* 直向 logo */
-      transform-origin:center center;
+      object-fit:contain;                 /* ✅ 盡量不裁切 */
       display:block;
+
+      transform: rotate(-90deg) scale(1.22);  /* ✅ 最大化但不爆版 */
+      transform-origin:center center;
     }
 
     /* Go 按鈕 */
     .go{
       position:absolute;
-      right:150px;
+      right:150px; /* 貼近白色直條 */
       bottom:16px;
       background:#f7b84b;
       color:#333;
@@ -122,9 +120,7 @@
     }
     .go:hover{ background:#ffcc66; }
 
-    /* =========================
-       手機版
-    ========================= */
+    /* 手機版 */
     @media (max-width: 900px){
       .grid{ grid-template-columns:1fr; }
 
@@ -139,8 +135,9 @@
       }
 
       .side{
-        height:180px;       /* ✅ 手機白條固定高度，logo 才會大 */
+        height:180px;     /* ✅ 手機白條固定高度，logo 才能最大化 */
         border-top:1px solid #ddd;
+        padding:10px 0;   /* 手機稍微多留白更好看 */
       }
 
       .go{
