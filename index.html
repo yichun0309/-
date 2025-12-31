@@ -79,16 +79,24 @@
       align-items:center;
       justify-content:center;
       overflow:hidden;
-      padding:8px 0;
     }
 
-    /* 圖片放大，填滿白色直條 */
-    .side img{
+    /* ⭐ 控制 logo 視覺大小（85% 留白的關鍵） */
+    .logo-box{
+      width:85%;
       height:85%;
-      width:auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* 圖片本體（只負責旋轉） */
+    .logo-box img{
+      width:100%;
+      height:100%;
       object-fit:contain;
       transform: rotate(-90deg);
-      transform-origin: center center;
+      transform-origin:center center;
       display:block;
     }
 
@@ -117,15 +125,6 @@
 
       .side{
         border-top:1px solid #ddd;
-        padding:14px 0;
-      }
-
-      .side img{
-        height:70%;
-        width:auto;
-        object-fit:contain;
-        transform: rotate(-90deg);
-        transform-origin: center center;
       }
 
       .go{
@@ -152,7 +151,9 @@
           </p>
         </div>
         <div class="side">
-          <img src="images/tccip.png" alt="TCCIP">
+          <div class="logo-box">
+            <img src="images/tccip.png" alt="TCCIP">
+          </div>
         </div>
       </div>
       <a class="go" href="https://tccip.ncdr.nat.gov.tw/au_01.aspx" target="_blank">Go</a>
@@ -169,7 +170,9 @@
           </p>
         </div>
         <div class="side">
-          <img src="images/dra.png" alt="DRA">
+          <div class="logo-box">
+            <img src="images/dra.png" alt="DRA">
+          </div>
         </div>
       </div>
       <a class="go" href="https://dra.ncdr.nat.gov.tw/" target="_blank">Go</a>
@@ -186,7 +189,9 @@
           </p>
         </div>
         <div class="side">
-          <img src="images/drr.png" alt="DRR">
+          <div class="logo-box">
+            <img src="images/drr.png" alt="DRR">
+          </div>
         </div>
       </div>
       <a class="go" href="https://drrstat.ncdr.nat.gov.tw/" target="_blank">Go</a>
@@ -203,7 +208,9 @@
           </p>
         </div>
         <div class="side">
-          <img src="images/cca.png" alt="CCA">
+          <div class="logo-box">
+            <img src="images/cca.png" alt="CCA">
+          </div>
         </div>
       </div>
       <a class="go" href="https://www.cca.gov.tw/" target="_blank">Go</a>
@@ -220,7 +227,9 @@
           </p>
         </div>
         <div class="side">
-          <img src="images/netzero.png" alt="淨零新北">
+          <div class="logo-box">
+            <img src="images/netzero.png" alt="淨零新北">
+          </div>
         </div>
       </div>
       <a class="go" href="https://lowcarbon.epd.ntpc.gov.tw/ntpcepd/" target="_blank">Go</a>
@@ -237,7 +246,9 @@
           </p>
         </div>
         <div class="side">
-          <img src="images/lowcarbon.png" alt="低碳生活網">
+          <div class="logo-box">
+            <img src="images/lowcarbon.png" alt="低碳生活網">
+          </div>
         </div>
       </div>
       <a class="go" href="https://lowcarbon.epd.ntpc.gov.tw/lowcarbon/front/" target="_blank">Go</a>
