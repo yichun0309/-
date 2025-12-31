@@ -49,7 +49,7 @@
     /* 左文字 + 右白條 */
     .card-inner{
       display:grid;
-      grid-template-columns: 1fr 120px;
+      grid-template-columns: 1fr 120px; /* 白色直條寬度 */
       height:100%;
     }
 
@@ -78,32 +78,33 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      overflow:hidden;
+      overflow:hidden; /* ✅ 關鍵：讓 logo 可以「滿版」超出就裁切 */
     }
 
-    /* ⭐ 控制 logo 視覺大小（85% 留白的關鍵） */
+    /* logo 容器：滿版 */
     .logo-box{
       width:100%;
-      height::100%;
+      height:100%;
       display:flex;
       align-items:center;
       justify-content:center;
     }
 
-    /* 圖片本體（只負責旋轉） */
+    /* ✅ 圖片：滿版策略（cover）+ 旋轉 */
     .logo-box img{
       width:100%;
       height:100%;
-      object-fit:contain;
-      transform: rotate(-90deg) scale(1.15);
-      transform-origin:center center;
+      object-fit:cover; /* ✅ 關鍵：直接滿版（允許裁切） */
+
+      transform: rotate(-90deg);
+      transform-origin: center center;
       display:block;
     }
 
     /* Go 按鈕 */
     .go{
       position:absolute;
-      right:138px;
+      right:138px; /* 貼近白色直條 */
       bottom:16px;
       background:#f7b84b;
       color:#333;
@@ -156,7 +157,7 @@
           </div>
         </div>
       </div>
-      <a class="go" href="https://tccip.ncdr.nat.gov.tw/index.aspx" target="_blank">Go</a>
+      <a class="go" href="https://tccip.ncdr.nat.gov.tw/au_01.aspx" target="_blank">Go</a>
     </div>
 
     <!-- 2 -->
